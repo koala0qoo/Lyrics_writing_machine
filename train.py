@@ -33,7 +33,7 @@ vocabulary = [dictionary[word] if word in dictionary else 0 for word in vocabula
 
 
 model = Model(learning_rate=FLAGS.learning_rate, batch_size=FLAGS.batch_size, num_steps=FLAGS.num_steps)
-model.build(embedding_file='../embedding/embedding.npy')
+model.build(embedding_file='/data/yh001/data-quiz-w11/embedding.npy')
 
 
 with tf.Session() as sess:
