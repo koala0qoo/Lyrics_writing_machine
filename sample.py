@@ -30,7 +30,7 @@ titles = ['江神子', '蝶恋花', '渔家傲']
 
 
 model = Model(learning_rate=FLAGS.learning_rate, batch_size=1, num_steps=1)
-model.build(embedding_file='../embedding/embedding.npy')
+model.build(embedding_file='/data/yh001/data-quiz-w11/embedding.npy')
 
 with tf.Session() as sess:
     summary_string_writer = tf.summary.FileWriter(FLAGS.output_dir, sess.graph)
