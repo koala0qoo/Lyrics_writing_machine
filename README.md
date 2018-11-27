@@ -24,7 +24,7 @@
 
 ### 第一部分：Word Embedding
 
-#### 理解Word Embedding
+#### 理解 Word Embedding
 
 Word embedding（词嵌入）的基本含义，是把高维空间中的稀疏表达嵌入到一个低维空间，形成在新空间上的稠密表达。从本质上来说，word embedding 的过程就是找到词语从高维空间到低维空间的一个线性映射。同时，映射后的新表达还要尽量保留原来的有用信息。
 
