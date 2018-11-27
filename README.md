@@ -1,5 +1,7 @@
 ## 人工智能写词机
 
+#### 项目简介：
+
 以《全宋词》为数据，应用TensorFlow框架和LSTM模型，训练出可以针对给定词牌写出完整的一首词的人工智能写词机。
 
 - 代码地址：https://github.com/koala0qoo/quiz-w11
@@ -8,6 +10,10 @@
 
 #### 文件内容：
 
+- embedding文件夹
+-- word2vec_basic_ch.py 执行embedding操作的脚本
+-- word2vec_basic_ch.ipynb 对代码的分析
+-- tsne.png 对embedding结果的可视化
 - QuanSongCi.txt 《全宋词》文本
 - flags.py 命令行参数处理
 - utils.py 读取与生成训练数据
