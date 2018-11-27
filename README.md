@@ -1,6 +1,6 @@
-## 作业三
+## 人工智能写词机
 
-训练一个人工智能写词机
+以《全宋词》为数据，应用TensorFlow框架和LSTM模型，训练出可以针对给定词牌写出完整的一首词的人工智能写词机。
 
 - 代码地址：https://github.com/koala0qoo/quiz-w11
 - 模型地址：https://www.tinymind.com/yh001/quiz-w11-2
@@ -8,11 +8,22 @@
 
 #### 文件内容：
 
-- utils.py 读取于生成训练数据
+- QuanSongCi.txt 《全宋词》文本
+- flags.py 命令行参数处理
+- utils.py 读取与生成训练数据
 - model.py 模型定义
 - train.py 训练脚本
-- sample.py 生成语句
+- sample.py 用最近的checkpoint，对三个词牌进行生成操作
+- train_eval.py 执行训练与验证（词牌生成）过程
 - log.png 输出内容截图
+
+
+#### 结果分析：
+
+输出结果
+
+![输入图片说明](https://github.com/koala0qoo/img/blob/master/log.png?raw=true)
+
 
 #### 对RNN的理解：
 
@@ -31,12 +42,3 @@ LSTM：
 LSTM 在传统 RNN 的隐藏状态的基础上增加了一个“细胞状态”，用于记忆的储存和传递。RNN 中用于传递记忆的是隐藏状态 h，而 h 每次向下一个时刻传递时都会乘以同一个矩阵 W（也是产生梯度消失或爆炸的原因）；LSTM 中的细胞状态 c 传递给下一个时刻的信息是上一时刻的信息和本时刻新输入信息的加和，因此不会受到矩阵连乘的影响。
 
 但是，由于并不是所有的信息都是有意义的，LSTM 通过一个“遗忘门”控制要遗忘哪些之前的信息，通过“输入门”控制要记住哪些当前输入的信息，而最后的输出则通过“输出门”筛选后得到。这些门都以 sigmoid 函数的形式起作用。不同于权重矩阵，sigmoid 产生的是一个遗忘的概率，在 0-1 之间，接近 0 倾向于遗忘，接近 1 则倾向于记住。这样就保证了有用信息可以长时间传递。
-
-
-
-#### 结果分析：
-
-输出结果
-
-![输入图片说明](https://github.com/koala0qoo/img/blob/master/log.png?raw=true)
-
