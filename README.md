@@ -44,6 +44,7 @@ Word embedding（词嵌入）的基本含义，是把高维空间中的稀疏表
 - 雨、雪、霜、露等表示自然现象的名词
 - 楼、台、亭、阁等表示建筑的名词
 ![输入图片说明](https://github.com/koala0qoo/Lyrics_writing_machine/blob/master/embedding/tsne.png?raw=true)
+
 由于本次训练采用的是Skip-gram模型，该模型的学习任务是预测给定词的上下文，因此embedding后具有相似表达的词，更可能具有相同的上下文，因而也更可能具有相似的语法功能或含义。
 
 
