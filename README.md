@@ -7,7 +7,7 @@
 - 代码地址：https://github.com/koala0qoo/quiz-w11
 - 运行地址：https://www.tinymind.com/executions/ajyrcf84
 
-### 文件内容：
+### 文件说明：
 
 - embedding文件夹
     - word2vec_basic_ch.py 执行embedding操作的脚本
