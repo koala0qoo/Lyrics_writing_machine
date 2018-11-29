@@ -58,26 +58,21 @@ class Model():
             data = tf.nn.embedding_lookup(embed, self.X)
 
         with tf.variable_scope('rnn'):
-            ##################
-            # Your Code here
             lstm_cell = tf.nn.rnn_cell.BasicLSTMCell(self.dim_embedding)
             lstm_cell = tf.nn.rnn_cell.DropoutWrapper(lstm_cell, output_keep_prob=self.keep_prob)
             cell = tf.nn.rnn_cell.MultiRNNCell([lstm_cell] * self.rnn_layers, state_is_tuple=True)
             self.state_tensor = cell.zero_state(self.batch_size, dtype=tf.float32)
             self.seq_output, self.outputs_state_tensor = tf.nn.dynamic_rnn(cell, data, initial_state=self.state_tensor)
-            ##################
 
         # flatten it
         seq_output_final = tf.reshape(self.seq_output, [-1, self.dim_embedding])
 
         with tf.variable_scope('softmax'):
-            ##################
-            # Your Code here
             W_o = tf.get_variable('W_o', [self.dim_embedding, self.num_words],
                                   initializer=tf.random_normal_initializer(stddev=0.01))
             b_o = tf.get_variable('b_o', [self.num_words], initializer=tf.constant_initializer(0.0))
             logits = tf.reshape(tf.matmul(seq_output_final, W_o) + b_o, [-1, self.num_words])
-            ##################
+
 
         tf.summary.histogram('logits', logits)
 
