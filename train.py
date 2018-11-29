@@ -57,10 +57,7 @@ with tf.Session() as sess:
         state = sess.run(model.state_tensor)
         for dl in utils.get_train_data(vocabulary, batch_size=FLAGS.batch_size, num_steps=FLAGS.num_steps):
 
-            ##################
-            # Your Code here
             feed_dict = { model.X:dl[0], model.Y:dl[1], model.state_tensor:state, model.keep_prob:0.8 }
-            ##################
 
             gs, _, state, l, summary_string = sess.run(
                 [model.global_step, model.optimizer, model.outputs_state_tensor, model.loss, model.merged_summary_op], feed_dict=feed_dict)
